@@ -14,11 +14,8 @@ export default function PostCard({ post }) {
 
                 <h2 className={styles.titulo}>{post.titulo}</h2>
 
-                <BotaoPrincipal>
-                    Ler
-                </BotaoPrincipal>
+                <BotaoPrincipal>Ler</BotaoPrincipal>
             </div>
         </Link>
-
     )
 }

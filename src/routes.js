@@ -7,6 +7,7 @@ import PaginaPadrao from "Componentes/PaginaPadrao";
 import Post from "paginas/Post";
 import {"v4" as uuidv4} from "uuid"
 import NaoEncontrada from "paginas/NaoEncontrada";
+import ScrollToTop from "Componentes/ScrollToTop";
 
 function AppRoutes() {
   const menu = [
@@ -25,13 +26,15 @@ function AppRoutes() {
   ]
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Menu itensMenu={menu}/>
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>
           <Route index element={<Inicio />} />
           <Route path="sobremim" element={<Sobremim />} />
-          <Route path="posts/:id" element={<Post />} />
+          
         </Route>
+        <Route path="posts/:id/*" element={<Post />} />
         <Route path="*" element={<NaoEncontrada />} />
       </Routes>
       <Rodape />
