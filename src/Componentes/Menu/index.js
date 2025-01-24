@@ -2,16 +2,13 @@ import styles from './Menu.module.css';
 import MenuLink from '../MenuLink';
 
 
-const Menu = () => {
+const Menu = ({itensMenu}) => {
     return (
         <header>
             <nav className={styles.navegacao}>
-                <MenuLink to="/" >
-                    Inicio
-                </MenuLink>
-                <MenuLink to="/sobremim">
-                    Sobre mim
-                </MenuLink>
+                {itensMenu.map(
+                    (item) => <MenuLink key={item.id} to={item.to}>{item.value}</MenuLink>
+                )}
             </nav>
         </header>
     )
